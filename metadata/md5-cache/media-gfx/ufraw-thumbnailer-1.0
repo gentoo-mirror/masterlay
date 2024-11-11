@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DEPEND=media-gfx/ufraw !media-gfx/raw-thumbnailer !media-gfx/gnome-raw-thumbnailer
+DESCRIPTION=Raw thumbnailer, based on ufraw-batch
+EAPI=6
+HOMEPAGE=ufraw.sourceforge
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2.0
+RDEPEND=media-gfx/ufraw !media-gfx/raw-thumbnailer !media-gfx/gnome-raw-thumbnailer
+SLOT=0
+_md5_=ba2377716bab647199a115bab57dab5e
