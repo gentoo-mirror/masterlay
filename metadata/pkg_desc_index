@@ -11,7 +11,9 @@ dev-libs/libthai 0.1.29: A a set of Thai language support routines
 dev-libs/vulkan-memory-allocator 3.0.1_p20240130: Easy to integrate Vulkan memory allocation library
 dev-libs/xbyak 7.05: JIT assembler for x86(IA-32)/x64(AMD64, x86-64)
 dev-python/memory-profiler 0.61: A module for monitoring memory usage of a python program
-dev-util/atlassian-plugin-sdk 9.1.1: Development kit to build Atlassian plugins
+dev-python/pyside6 6.8.0.2: Python bindings for the Qt framework
+dev-python/shiboken6 6.8.0.2: Python binding generator for C++ libraries
+dev-util/atlassian-plugin-sdk 8.2.8 9.1.1: Development kit to build Atlassian plugins
 dev-util/bruno-bin 1.19.0: Opensource IDE For Exploring and Testing Api's
 dev-util/idea-ultimate 2024.2.3: A complete toolset for web, mobile and enterprise development
 dev-util/insomnia-bin 8.6.0: REST API client, a postman alternative
