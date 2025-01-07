@@ -24,11 +24,14 @@ media-gfx/blender 4.3.2: 3D Creation/Animation/Publishing System
 media-gfx/krita-bin 5.2.6: Free digital painting application. Digital Painting, Creative Freedom!
 media-gfx/orcaslicer 2.2.0: open source slicer for FDM printers
 media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
-media-libs/openxr-loader 1.0.26: OpenXR loader
+media-libs/monado-vulkan-layers 9999: Optional Vulkan Layers for Monado
+media-libs/opencomposite 9999: OpenVR over OpenXR compatibility layer
+media-libs/openxr-loader 1.1.43: OpenXR loader
 media-sound/beat 0.0.6: Music player for Gnome
 media-video/davinci-resolve 18.1.4: Professional A/V post-production software suite
 media-video/snapshot 45.0: Take pictures and videos
 net-misc/rustdesk-client-bin 1.3.2: RustDesk Client
+net-misc/wivrn 0.22: WiVRn OpenXR streaming
 net-proxy/burpsuite 2024.5.5: Interactive proxy for attacking and debugging web applications
 net-vpn/amneziawg-module 9999: Fork of WireGuard with protection against detection by DPI systems
 net-vpn/amneziawg-tools 1.0.20241018: Tools for configuring Amnezia-WG, such as awg(8) and awg-quick(8)
