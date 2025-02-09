@@ -36,4 +36,3 @@ net-proxy/burpsuite 2024.5.5: Interactive proxy for attacking and debugging web 
 net-vpn/amneziawg-module 9999: Fork of WireGuard with protection against detection by DPI systems
 net-vpn/amneziawg-tools 1.0.20241018: Tools for configuring Amnezia-WG, such as awg(8) and awg-quick(8)
 net-wireless/linux-wifi-hotspot 4.7.2: Linux Wifi Hotspot
-www-client/yandex-browser-stable 23.7.1.1215: The web browser from Yandex
