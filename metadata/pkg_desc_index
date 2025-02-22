@@ -22,7 +22,7 @@ games-arcade/stepmania 5.1.0_beta2_p20221114-r8: Advanced rhythm game. Designed 
 media-gfx/animation-nodes 9999: is a node based visual scripting system designed for motion graphics in Blender
 media-gfx/blender 4.3.2: 3D Creation/Animation/Publishing System
 media-gfx/krita-bin 5.2.6: Free digital painting application. Digital Painting, Creative Freedom!
-media-gfx/orcaslicer 2.2.0: open source slicer for FDM printers
+media-gfx/orcaslicer 2.2.0 2.3.0_beta: open source slicer for FDM printers
 media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
 media-libs/monado-vulkan-layers 9999: Optional Vulkan Layers for Monado
 media-libs/opencomposite 9999: OpenVR over OpenXR compatibility layer
