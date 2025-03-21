@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=!media-gfx/orcaslicer
+DESCRIPTION=Orca Slicer is a free 3D printing slicer created by SoftFever.
+EAPI=8
+HOMEPAGE=https://orca-slicer.com/
+KEYWORDS=~amd64 ~arm ~arm64 ~x86
+LICENSE=GPL-3
+RDEPEND=sys-fs/fuse:0
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/SoftFever/OrcaSlicer/releases/download/v2.3.0/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.3.0.AppImage
+_md5_=47569cd966736f0d272b1d819a7f82ec

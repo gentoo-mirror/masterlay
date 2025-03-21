@@ -21,8 +21,8 @@ dev-util/rust-rover 251.23774.2: A brand new JetBrains IDE for Rust Developers
 games-arcade/stepmania 5.1.0_beta2_p20221114-r8: Advanced rhythm game. Designed for both home and arcade use
 media-gfx/animation-nodes 9999: is a node based visual scripting system designed for motion graphics in Blender
 media-gfx/blender 4.3.2-r2: 3D Creation/Animation/Publishing System
-media-gfx/krita-bin 5.2.6: Free digital painting application. Digital Painting, Creative Freedom!
-media-gfx/orcaslicer 2.2.0 2.3.0_beta2: open source slicer for FDM printers
+media-gfx/krita-bin 5.2.9: Free digital painting application. Digital Painting, Creative Freedom!
+media-gfx/orcaslicer-bin 2.3.0: Orca Slicer is a free 3D printing slicer created by SoftFever.
 media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
 media-libs/libnoise 1.0.0: A portable, open-source, coherent noise-generating library for C++
 media-libs/monado-vulkan-layers 9999: Optional Vulkan Layers for Monado
