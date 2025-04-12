@@ -3,7 +3,7 @@ app-misc/headsetcontrol 2.7.0: Adds loopback and LED control to headsets
 app-misc/input-remapper 2.0.1: An easy to use tool to change the behaviour of your input devices.
 dev-cpp/cpp-jwt 1.5_pre20220727: JSON Web Token library for C++
 dev-db/datagrip 2023.3.2: Many databases, one tool
-dev-db/mongodb 7.0.12: A high-performance, open source, schema-free document-oriented database
+dev-db/mongodb 7.0.18: A high-performance, open source, schema-free document-oriented database
 dev-db/mongodb-compass 1.46.0: The MongoDB GUI
 dev-lang/faust 2.40.0: functional programming language for realtime audio plugins
 dev-libs/libdatrie 0.2.13: Double-Array Trie Library
