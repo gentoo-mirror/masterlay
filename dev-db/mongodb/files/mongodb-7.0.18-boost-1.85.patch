@@ -1,22 +1,6 @@
-From e7b941598ef74d3b01b60c5e26ee5d5e95bfda17 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Fran=C3=A7ois=20Valenduc?= <francoisvalenduc@gmail.com>
-Date: Sat, 13 Jul 2024 13:49:42 +0200
-Subject: [PATCH] fix for boost-1.85
-
----
- src/mongo/db/initialize_server_global_state.cpp     |  4 ++--
- src/mongo/db/startup_warnings_mongod.cpp            |  1 +
- .../db/storage/storage_engine_lock_file_posix.cpp   |  4 ++--
- src/mongo/db/storage/storage_engine_metadata.cpp    |  4 ++--
- src/mongo/scripting/engine.cpp                      |  1 +
- src/mongo/shell/shell_utils_launcher.cpp            | 13 +++++++------
- src/mongo/shell/shell_utils_launcher.h              |  2 +-
- 7 files changed, 16 insertions(+), 13 deletions(-)
-
-diff --git a/src/mongo/db/initialize_server_global_state.cpp b/src/mongo/db/initialize_server_global_state.cpp
-index 02a30aac334..e774cc4019a 100644
---- a/src/mongo/db/initialize_server_global_state.cpp
-+++ b/src/mongo/db/initialize_server_global_state.cpp
+diff -ru mongo-r7.0.18.old/src/mongo/db/initialize_server_global_state.cpp mongo-r7.0.18/src/mongo/db/initialize_server_global_state.cpp
+--- mongo-r7.0.18.old/src/mongo/db/initialize_server_global_state.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/db/initialize_server_global_state.cpp	2025-04-12 20:37:17.369326917 +0300
 @@ -33,7 +33,7 @@
  #include "mongo/db/initialize_server_global_state.h"
  #include "mongo/db/initialize_server_global_state_gen.h"
@@ -26,7 +10,7 @@ index 02a30aac334..e774cc4019a 100644
  #include <fmt/format.h>
  #include <iostream>
  #include <memory>
-@@ -310,7 +310,7 @@ bool checkAndMoveLogFile(const std::string& absoluteLogpath) {
+@@ -310,7 +310,7 @@
                                      << "\" should name a file, not a directory.");
          }
  
@@ -35,23 +19,34 @@ index 02a30aac334..e774cc4019a 100644
              std::string renameTarget = absoluteLogpath + "." + terseCurrentTimeForFilename();
              boost::system::error_code ec;
              boost::filesystem::rename(absoluteLogpath, renameTarget, ec);
-diff --git a/src/mongo/db/startup_warnings_mongod.cpp b/src/mongo/db/startup_warnings_mongod.cpp
-index 6d47b042947..3fc5012f180 100644
---- a/src/mongo/db/startup_warnings_mongod.cpp
-+++ b/src/mongo/db/startup_warnings_mongod.cpp
+diff -ru mongo-r7.0.18.old/src/mongo/db/startup_warnings_mongod.cpp mongo-r7.0.18/src/mongo/db/startup_warnings_mongod.cpp
+--- mongo-r7.0.18.old/src/mongo/db/startup_warnings_mongod.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/db/startup_warnings_mongod.cpp	2025-04-12 20:37:17.369430618 +0300
 @@ -33,6 +33,7 @@
  #include "mongo/db/startup_warnings_mongod.h"
  
  #include <boost/filesystem/operations.hpp>
 +#include <boost/filesystem/exception.hpp>
  #include <fstream>
- #ifndef _WIN32
- #include <sys/resource.h>
-diff --git a/src/mongo/db/storage/storage_engine_lock_file_posix.cpp b/src/mongo/db/storage/storage_engine_lock_file_posix.cpp
-index 41fefe73cdf..e8d1d0c08ed 100644
---- a/src/mongo/db/storage/storage_engine_lock_file_posix.cpp
-+++ b/src/mongo/db/storage/storage_engine_lock_file_posix.cpp
-@@ -57,7 +57,7 @@ void flushMyDirectory(const boost::filesystem::path& file) {
+ 
+ #ifdef __linux__
+Только в mongo-r7.0.18/src/mongo/db: startup_warnings_mongod.cpp.orig
+diff -ru mongo-r7.0.18.old/src/mongo/db/storage/backup_block.cpp mongo-r7.0.18/src/mongo/db/storage/backup_block.cpp
+--- mongo-r7.0.18.old/src/mongo/db/storage/backup_block.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/db/storage/backup_block.cpp	2025-04-12 20:39:43.202855429 +0300
+@@ -59,7 +59,7 @@
+ 
+     // Remove the file extension and convert to generic form (i.e. replace "\" with "/"
+     // on windows, no-op on unix).
+-    return boost::filesystem::change_extension(identWithExtension, "").generic_string();
++    return boost::filesystem::path(identWithExtension).replace_extension("").generic_string();
+ }
+ 
+ }  // namespace details
+diff -ru mongo-r7.0.18.old/src/mongo/db/storage/storage_engine_lock_file_posix.cpp mongo-r7.0.18/src/mongo/db/storage/storage_engine_lock_file_posix.cpp
+--- mongo-r7.0.18.old/src/mongo/db/storage/storage_engine_lock_file_posix.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/db/storage/storage_engine_lock_file_posix.cpp	2025-04-12 20:37:17.369511460 +0300
+@@ -57,7 +57,7 @@
      // if called without a fully qualified path it asserts; that makes mongoperf fail.
      // so make a warning. need a better solution longer term.
      // massert(40389, str::stream() << "Couldn't find parent dir for file: " << file.string(),);
@@ -60,7 +55,7 @@ index 41fefe73cdf..e8d1d0c08ed 100644
          LOGV2(22274,
                "warning flushMyDirectory couldn't find parent dir for file: {file}",
                "flushMyDirectory couldn't find parent dir for file",
-@@ -66,7 +66,7 @@ void flushMyDirectory(const boost::filesystem::path& file) {
+@@ -66,7 +66,7 @@
      }
  
  
@@ -69,11 +64,10 @@ index 41fefe73cdf..e8d1d0c08ed 100644
  
      LOGV2_DEBUG(22275, 1, "flushing directory {dir_string}", "dir_string"_attr = dir.string());
  
-diff --git a/src/mongo/db/storage/storage_engine_metadata.cpp b/src/mongo/db/storage/storage_engine_metadata.cpp
-index 4008ac80d9b..fe2abacbfca 100644
---- a/src/mongo/db/storage/storage_engine_metadata.cpp
-+++ b/src/mongo/db/storage/storage_engine_metadata.cpp
-@@ -222,7 +222,7 @@ void flushMyDirectory(const boost::filesystem::path& file) {
+diff -ru mongo-r7.0.18.old/src/mongo/db/storage/storage_engine_metadata.cpp mongo-r7.0.18/src/mongo/db/storage/storage_engine_metadata.cpp
+--- mongo-r7.0.18.old/src/mongo/db/storage/storage_engine_metadata.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/db/storage/storage_engine_metadata.cpp	2025-04-12 20:37:17.369570745 +0300
+@@ -222,7 +222,7 @@
      // if called without a fully qualified path it asserts; that makes mongoperf fail.
      // so make a warning. need a better solution longer term.
      // massert(13652, str::stream() << "Couldn't find parent dir for file: " << file.string(),);
@@ -82,7 +76,7 @@ index 4008ac80d9b..fe2abacbfca 100644
          LOGV2(22283,
                "warning flushMyDirectory couldn't find parent dir for file: {file}",
                "flushMyDirectory couldn't find parent dir for file",
-@@ -231,7 +231,7 @@ void flushMyDirectory(const boost::filesystem::path& file) {
+@@ -231,7 +231,7 @@
      }
  
  
@@ -91,10 +85,9 @@ index 4008ac80d9b..fe2abacbfca 100644
  
      LOGV2_DEBUG(22284, 1, "flushing directory {dir_string}", "dir_string"_attr = dir.string());
  
-diff --git a/src/mongo/scripting/engine.cpp b/src/mongo/scripting/engine.cpp
-index 7faf89e5ae8..c5e21a62c4d 100644
---- a/src/mongo/scripting/engine.cpp
-+++ b/src/mongo/scripting/engine.cpp
+diff -ru mongo-r7.0.18.old/src/mongo/scripting/engine.cpp mongo-r7.0.18/src/mongo/scripting/engine.cpp
+--- mongo-r7.0.18.old/src/mongo/scripting/engine.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/scripting/engine.cpp	2025-04-12 20:37:17.369645572 +0300
 @@ -34,6 +34,7 @@
  
  #include <algorithm>
@@ -103,10 +96,9 @@ index 7faf89e5ae8..c5e21a62c4d 100644
  
  #include "mongo/base/string_data.h"
  #include "mongo/client/dbclient_base.h"
-diff --git a/src/mongo/shell/shell_utils_launcher.cpp b/src/mongo/shell/shell_utils_launcher.cpp
-index 30a04df5a89..1ff93db38be 100644
---- a/src/mongo/shell/shell_utils_launcher.cpp
-+++ b/src/mongo/shell/shell_utils_launcher.cpp
+diff -ru mongo-r7.0.18.old/src/mongo/shell/shell_utils_launcher.cpp mongo-r7.0.18/src/mongo/shell/shell_utils_launcher.cpp
+--- mongo-r7.0.18.old/src/mongo/shell/shell_utils_launcher.cpp	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/shell/shell_utils_launcher.cpp	2025-04-12 20:37:17.369745417 +0300
 @@ -36,6 +36,7 @@
  #include <boost/iostreams/stream_buffer.hpp>
  #include <boost/iostreams/tee.hpp>
@@ -115,7 +107,7 @@ index 30a04df5a89..1ff93db38be 100644
  #include <fcntl.h>
  #include <fmt/format.h>
  #include <fstream>
-@@ -316,26 +317,26 @@ void copyDir(const boost::filesystem::path& from, const boost::filesystem::path&
+@@ -316,26 +317,26 @@
      boost::filesystem::directory_iterator i(from);
      while (i != end) {
          boost::filesystem::path p = *i;
@@ -148,10 +140,9 @@ index 30a04df5a89..1ff93db38be 100644
              }
          }
          ++i;
-diff --git a/src/mongo/shell/shell_utils_launcher.h b/src/mongo/shell/shell_utils_launcher.h
-index 65337f061b3..b92d1126c5d 100644
---- a/src/mongo/shell/shell_utils_launcher.h
-+++ b/src/mongo/shell/shell_utils_launcher.h
+diff -ru mongo-r7.0.18.old/src/mongo/shell/shell_utils_launcher.h mongo-r7.0.18/src/mongo/shell/shell_utils_launcher.h
+--- mongo-r7.0.18.old/src/mongo/shell/shell_utils_launcher.h	2025-04-10 00:02:18.000000000 +0300
++++ mongo-r7.0.18/src/mongo/shell/shell_utils_launcher.h	2025-04-12 20:37:17.369812688 +0300
 @@ -29,7 +29,7 @@
  
  #pragma once
@@ -161,6 +152,3 @@ index 65337f061b3..b92d1126c5d 100644
  #include <map>
  #include <sstream>
  #include <string>
--- 
-2.44.2
-
