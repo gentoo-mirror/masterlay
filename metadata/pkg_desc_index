@@ -4,7 +4,7 @@ app-misc/input-remapper 2.0.1: An easy to use tool to change the behaviour of yo
 dev-cpp/cpp-jwt 1.5_pre20220727: JSON Web Token library for C++
 dev-db/datagrip 2023.3.2: Many databases, one tool
 dev-db/mongodb 7.0.12: A high-performance, open source, schema-free document-oriented database
-dev-db/mongodb-compass 1.45.4: The MongoDB GUI
+dev-db/mongodb-compass 1.46.0: The MongoDB GUI
 dev-lang/faust 2.40.0: functional programming language for realtime audio plugins
 dev-libs/libdatrie 0.2.13: Double-Array Trie Library
 dev-libs/libthai 0.1.29: A a set of Thai language support routines
@@ -17,10 +17,10 @@ dev-util/atlassian-plugin-sdk 8.2.8 9.1.1: Development kit to build Atlassian pl
 dev-util/bruno-bin 1.19.0: Opensource IDE For Exploring and Testing Api's
 dev-util/idea-ultimate 2024.3.3: A complete toolset for web, mobile and enterprise development
 dev-util/insomnia-bin 8.6.0: REST API client, a postman alternative
-dev-util/rust-rover 251.23774.2: A brand new JetBrains IDE for Rust Developers
+dev-util/rust-rover 251.23774.271: A brand new JetBrains IDE for Rust Developers
 games-arcade/stepmania 5.1.0_beta2_p20221114-r8: Advanced rhythm game. Designed for both home and arcade use
 media-gfx/animation-nodes 9999: is a node based visual scripting system designed for motion graphics in Blender
-media-gfx/blender 4.3.2-r2: 3D Creation/Animation/Publishing System
+media-gfx/blender 4.4.0: 3D Creation/Animation/Publishing System
 media-gfx/krita-bin 5.2.9: Free digital painting application. Digital Painting, Creative Freedom!
 media-gfx/orcaslicer-bin 2.3.0: Orca Slicer is a free 3D printing slicer created by SoftFever.
 media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
