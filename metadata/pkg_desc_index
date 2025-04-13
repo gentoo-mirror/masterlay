@@ -24,6 +24,7 @@ media-gfx/blender 4.4.0: 3D Creation/Animation/Publishing System
 media-gfx/krita-bin 5.2.9: Free digital painting application. Digital Painting, Creative Freedom!
 media-gfx/orcaslicer-bin 2.3.0: Orca Slicer is a free 3D printing slicer created by SoftFever.
 media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
+media-gfx/xsane 1.0.0: Graphical scanning frontend
 media-libs/libnoise 1.0.0: A portable, open-source, coherent noise-generating library for C++
 media-libs/monado-vulkan-layers 9999: Optional Vulkan Layers for Monado
 media-libs/opencomposite 9999: OpenVR over OpenXR compatibility layer
