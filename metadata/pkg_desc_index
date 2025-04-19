@@ -15,7 +15,7 @@ dev-python/pyside6 6.8.0.2: Python bindings for the Qt framework
 dev-python/shiboken6 6.8.0.2: Python binding generator for C++ libraries
 dev-util/atlassian-plugin-sdk 8.2.8 9.1.1: Development kit to build Atlassian plugins
 dev-util/bruno-bin 1.19.0: Opensource IDE For Exploring and Testing Api's
-dev-util/idea-ultimate 2024.3.3: A complete toolset for web, mobile and enterprise development
+dev-util/idea-ultimate 2025.1: A complete toolset for web, mobile and enterprise development
 dev-util/insomnia-bin 8.6.0: REST API client, a postman alternative
 dev-util/rust-rover 251.23774.271: A brand new JetBrains IDE for Rust Developers
 games-arcade/stepmania 5.1.0_beta2_p20221114-r8: Advanced rhythm game. Designed for both home and arcade use
