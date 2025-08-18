@@ -25,7 +25,6 @@ media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
 media-libs/libnoise 1.0.0: A portable, open-source, coherent noise-generating library for C++
 media-libs/monado-vulkan-layers 9999: Optional Vulkan Layers for Monado
 media-libs/opencomposite 9999: OpenVR over OpenXR compatibility layer
-media-libs/openxr-loader 1.1.43: OpenXR loader
 media-sound/beat 0.0.6: Music player for Gnome
 media-video/davinci-resolve 18.1.4: Professional A/V post-production software suite
 media-video/snapshot 45.0: Take pictures and videos
