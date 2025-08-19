@@ -19,17 +19,18 @@ dev-util/insomnia-bin 8.6.0: REST API client, a postman alternative
 dev-util/rust-rover 252.18003.32: A brand new JetBrains IDE for Rust Developers
 games-arcade/stepmania 5.1.0_beta2_p20221114-r8: Advanced rhythm game. Designed for both home and arcade use
 media-gfx/animation-nodes 9999: is a node based visual scripting system designed for motion graphics in Blender
+media-gfx/blender 4.5.0: 3D Creation/Animation/Publishing System
 media-gfx/krita-bin 5.2.9: Free digital painting application. Digital Painting, Creative Freedom!
 media-gfx/orcaslicer-bin 2.3.0: Orca Slicer is a free 3D printing slicer created by SoftFever.
 media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
 media-libs/libnoise 1.0.0: A portable, open-source, coherent noise-generating library for C++
 media-libs/monado-vulkan-layers 9999: Optional Vulkan Layers for Monado
-media-libs/opencomposite 9999: OpenVR over OpenXR compatibility layer
 media-sound/beat 0.0.6: Music player for Gnome
 media-video/davinci-resolve 18.1.4: Professional A/V post-production software suite
 media-video/snapshot 45.0: Take pictures and videos
+media-video/video2x 6.4.0: A lossless video/GIF/image upscaler.
+media-video/video2x-qt6 6.4.0: Qt 6 GUI for Video2x.
 net-misc/rustdesk-bin 1.3.9: Yet another remote desktop software, written in Rust.
-net-misc/wivrn 0.22: WiVRn OpenXR streaming
 net-proxy/burpsuite 2024.5.5: Interactive proxy for attacking and debugging web applications
 net-vpn/amneziawg-module 9999: Fork of WireGuard with protection against detection by DPI systems
 net-vpn/amneziawg-tools 1.0.20241018: Tools for configuring Amnezia-WG, such as awg(8) and awg-quick(8)
