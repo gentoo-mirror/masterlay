@@ -15,7 +15,8 @@ media-gfx/ufraw-thumbnailer 1.0: Raw thumbnailer, based on ufraw-batch
 media-sound/beat 0.0.6: Music player for Gnome
 media-video/video2x 6.4.0: A lossless video/GIF/image upscaler.
 media-video/video2x-qt6 6.4.0: Qt 6 GUI for Video2x.
-net-misc/rustdesk-bin 1.3.9: Yet another remote desktop software, written in Rust.
+net-im/max 25.8.0.454: IM client
+net-misc/rustdesk-bin 1.4.1: Yet another remote desktop software, written in Rust.
 net-proxy/burpsuite 2024.5.5: Interactive proxy for attacking and debugging web applications
 net-vpn/amneziawg-module 9999: Fork of WireGuard with protection against detection by DPI systems
 net-vpn/amneziawg-tools 1.0.20241018: Tools for configuring Amnezia-WG, such as awg(8) and awg-quick(8)

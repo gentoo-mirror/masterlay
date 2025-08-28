@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst postrm preinst unpack
+DEPEND=x11-libs/gtk+:3 x11-libs/libnotify dev-libs/nss x11-libs/libXtst app-accessibility/at-spi2-core app-crypt/libsecret
+DESCRIPTION=IM client
+EAPI=8
+HOMEPAGE=https://max.ru
+IDEPEND=dev-util/desktop-file-utils x11-misc/shared-mime-info
+INHERIT=xdg desktop
+KEYWORDS=~amd64
+RDEPEND=x11-libs/gtk+:3 x11-libs/libnotify dev-libs/nss x11-libs/libXtst app-accessibility/at-spi2-core app-crypt/libsecret
+SLOT=0
+SRC_URI=https://download.max.ru/electron/MAX.deb
+_eclasses_=xdg-utils	42869b3c8d86a70ef3cf75165a395e09	xdg	3ef49a87c52c8b77c476351195dfe575	desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed
+_md5_=11d2dc53b0a0fe3ede254fcec9f7e034
